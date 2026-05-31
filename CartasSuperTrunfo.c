@@ -11,5 +11,8 @@ int main() {
 
   // Área para exibição dos dados da cidade
 
+    printf("Hello, World!\n");
+    printf("Exemplo de edição de código!\n");
+
 return 0;
 } 
