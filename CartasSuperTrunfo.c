@@ -8,6 +8,9 @@ int main(){     //Definição das variáveis com os atributos de cada carta
   float area_km21, area_km22;
   double superPoderC1, superPoderC2;
   double PIB1, densidade_populacional1, PIB_percapita1, PIB2, densidade_populacional2, PIB_percapita2;
+  int atributo1, atributo2;
+  double somaCarta1 = 0;
+  double somaCarta2 = 0;
 
 
   //Abaixo os mecanismos de entrada e saída para cadastro dos dados das cartas
@@ -182,6 +185,158 @@ switch(opcao)
 
     break;
 }
+
+    printf("Escolha o primeiro atributo:\n");
+    printf("1 - Populacao\n");
+    printf("2 - Area\n");
+    printf("3 - PIB\n");
+    printf("4 - Pontos Turisticos\n");
+    printf("5 - Densidade Populacional\n");
+    scanf("%d", &atributo1);
+
+    printf("\nEscolha o segundo atributo:\n");
+
+switch (atributo1)
+{
+    case 1:
+        printf("2 - Area\n");
+        printf("3 - PIB\n");
+        printf("4 - Pontos Turisticos\n");
+        printf("5 - Densidade Populacional\n");
+        break;
+
+    case 2:
+        printf("1 - Populacao\n");
+        printf("3 - PIB\n");
+        printf("4 - Pontos Turisticos\n");
+        printf("5 - Densidade Populacional\n");
+        break;
+
+    case 3:
+        printf("1 - Populacao\n");
+        printf("2 - Area\n");
+        printf("4 - Pontos Turisticos\n");
+        printf("5 - Densidade Populacional\n");
+        break;
+
+    case 4:
+        printf("1 - Populacao\n");
+        printf("2 - Area\n");
+        printf("3 - PIB\n");
+        printf("5 - Densidade Populacional\n");
+        break;
+
+    case 5:
+        printf("1 - Populacao\n");
+        printf("2 - Area\n");
+        printf("3 - PIB\n");
+        printf("4 - Pontos Turisticos\n");
+        break;
+
+    default:
+        printf("Opcao invalida!\n");
+}
+
+scanf("%d", &atributo2);
+
+if (atributo1 == atributo2)
+{
+    printf("Voce nao pode escolher o mesmo atributo!\n");
+    return 0;
+}
+
+switch (atributo1)
+{
+case 1:
+
+    somaCarta1 += populacao1;
+    somaCarta2 += populacao2;
+
+    break;
+
+case 2:
+
+    somaCarta1 += area_km21;
+    somaCarta2 += area_km22;
+
+    break;
+
+case 3:
+
+    somaCarta1 += PIB1;
+    somaCarta2 += PIB2;
+
+    break;
+
+case 4:
+
+    somaCarta1 += pontos_turisticos1;
+    somaCarta2 += pontos_turisticos2;
+
+    break;
+
+case 5:
+
+    somaCarta1 += densidade_populacional1;
+    somaCarta2 += densidade_populacional2;
+
+    break;
+}
+
+switch (atributo2)
+{
+case 1:
+
+    somaCarta1 += populacao1;
+    somaCarta2 += populacao2;
+
+    break;
+
+case 2:
+
+    somaCarta1 += area_km21;
+    somaCarta2 += area_km22;
+
+    break;
+
+case 3:
+
+    somaCarta1 += PIB1;
+    somaCarta2 += PIB2;
+
+    break;
+
+case 4:
+
+    somaCarta1 += pontos_turisticos1;
+    somaCarta2 += pontos_turisticos2;
+
+    break;
+
+case 5:
+
+    somaCarta1 += densidade_populacional1;
+    somaCarta2 += densidade_populacional2;
+
+    break;
+}
+
+printf("\nSoma Carta 1: %.2lf\n", somaCarta1);
+printf("Soma Carta 2: %.2lf\n", somaCarta2);
+
+if (somaCarta1 > somaCarta2)
+{
+    printf("Carta 1 venceu!\n");
+}
+else if (somaCarta2 > somaCarta1)
+{
+    printf("Carta 2 venceu!\n");
+}
+else
+{
+    printf("Empate!\n");
+}
+
   return 0;
 
 }
